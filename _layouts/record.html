@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<div class="container">
+<h1>{{ page.title }}</h1>
+
+<div class="row py-lg-5 text-center">
+    <div class="col-lg-6 col-md-8 mx-aut">
+        <dl class="row bg-light">
+            <dt class="col-sm-3">Data Provider:</dt>
+            <dd class="col-sm-9">{{ page.data_provider }}</dd>
+        </dl>
+    </div>
+</div>
+
+<dl class="row">
+    <dt class="col-sm-3">Title:</dt>
+    <dd class="col-sm-9">{{ page.title }}</dd>
+    <dt class="col-sm-3">Format:</dt>
+    <dd class="col-sm-9">{{ page.format }}</dd>
+
+    <dt class="col-sm-3">Language:</dt>
+    <dd class="col-sm-9">{{ page.language }}</dd>
+    <dt class="col-sm-3">Description:</dt>
+    <dd class="col-sm-9">{{ page.description | markdownify }}</dd>
+    <dt class="col-sm-3">License:</dt>
+    <dd class="col-sm-9">{{ page.license }}</dd>
+    <dt class="col-sm-3">URL:</dt>
+    <dd class="col-sm-9"><a href="{{ page.record_url }}" target="_blank">{{ page.record_url }}</a></dd> 
+</dl>
+
+{{ content }}
+
+</div>
