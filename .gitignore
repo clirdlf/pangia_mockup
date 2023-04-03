@@ -3,3 +3,6 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
+lib/ipynb_checkpoints/
+lib/.env
+pangia_etl
