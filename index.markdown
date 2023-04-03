@@ -4,13 +4,3 @@
 
 layout: home
 ---
-
-<div class="container">
-    <h1>Featured Datasets</h1>
-
-    {%- assign counter = 1 -%}
-    {% for record in site.records %}
-        <p><a href="{{ record.url | relative_url }}">{{ record.title }}</a></p>
-        {% assign counter = counter | plus:1 %}
-    {% endfor %}
-</div>
