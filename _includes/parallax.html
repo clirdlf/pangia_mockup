@@ -1,0 +1,15 @@
+<style>
+.parallax {
+    height: 80vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    background-image:
+        linear-gradient(45deg,
+            rgba(0,0,0, 0.3),
+            rgba(0,0,0, 0.3)), url('{{ include.image | relative_url }}');
+    }
+}
+</style>
