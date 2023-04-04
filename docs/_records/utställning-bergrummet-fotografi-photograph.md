@@ -11,5 +11,6 @@ record_url: https://www.europeana.eu/item/91627/SMVK_EM_fotografi_3452950?utm_so
 data_provider:
 - Museum of Ethnography
 date: '2017-05-22T19:52:10.665Z'
+format: Image
 ---
 

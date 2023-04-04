@@ -12,5 +12,6 @@ record_url: https://www.europeana.eu/item/9200518/ark__12148_btv1b9080431f?utm_s
 data_provider:
 - National Library of France
 date: '2019-09-02T18:23:41.797Z'
+format: Image
 ---
 

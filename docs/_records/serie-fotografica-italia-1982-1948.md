@@ -11,5 +11,6 @@ record_url: https://www.europeana.eu/item/9200369/webclient_DeliveryManager_pid_
 data_provider:
 - European Library of Information and Culture
 date: '2017-06-21T13:56:42.952Z'
+format: Image
 ---
 
