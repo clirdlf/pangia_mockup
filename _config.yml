@@ -66,5 +66,4 @@ exclude:
   - vendor/ruby/
   - .ipynb_checkpoints
   - lib/
-  - ~
   - pangia_etl
