@@ -161,8 +161,10 @@ layout: default
         <div class="results_summary border-bottom py-3">
             Showing <strong>{{ site.records.size }}</strong> results.
         </div>
+        {% assign n = site.records.size %}
+        {% assign records = site.records | sample: n %}
 
-        {% for record in site.records %}
+        {% for record in records %}
         <div class="row border-bottom my-5">
             <div class="col-md-3 text-center my-auto">
                 <a href="{{ record.url | relative_url }}">
