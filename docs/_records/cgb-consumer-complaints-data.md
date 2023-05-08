@@ -9,7 +9,7 @@ description: Individual informal consumer complaint data detailing complaints fi
   selected by the consumer. The FCC does not verify the facts alleged in these complaints.
 resource_count: 4
 record_url: https://catalog.data.gov/dataset/cgb-consumer-complaints-data
-author: null
+author: 
 data_provider: Federal Communications Commission
 date: '2020-11-12T13:20:14.500505'
 format: CSV

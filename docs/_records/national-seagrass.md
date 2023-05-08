@@ -17,5 +17,6 @@ author: null
 data_provider: U.S. Environmental Protection Agency
 date: '2023-04-02T17:43:28.740352'
 format: ZIP
+keywords: [ "WorldView-2", "WorldView-3", "coastal monitoring", "satellite remote sensing", "image classification", "seagrass" ]
 ---
 

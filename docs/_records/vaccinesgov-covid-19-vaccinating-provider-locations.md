@@ -12,5 +12,6 @@ author: null
 data_provider: U.S. Department of Health & Human Services
 date: '2021-07-09T13:31:43.221147'
 format: CSV
+keywords: [ "flu", "flu shot", "flu vaccination", "providers", "vaccination locations", "vaccination sites", "vaccinefinder", "vaccines" ]
 ---
 

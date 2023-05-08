@@ -1,0 +1,29 @@
+---
+layout: page
+---
+<div class="container my-5">
+<h1>Pangia client library</h1>
+
+The <code>pagia_hub</code> library allows you to interact with the <strong>Pangia Discovery Hub</strong>. Discover datasets and information for your projects or experiment with pre-computed apps hosted by Pangia. You can also create and share your own models and datasets with the community. The <code>pangia_hub</code> library provides a simple way to do all these things in Python.
+
+...
+
+<h2 class="mt-5">Example</h2>
+
+<code>
+    <p>from pangia_hub import list_datasets</p>
+    <p>datasets = list_datasets()</p>
+    <p>
+        <span class="text-muted"># Configured via client</span>
+        </p>
+        <p>
+        pangia_api = PangiaApi(<br>
+            <span class="p-5">endpoint="https://pangianetwork.org", <span class="text-muted"># Can be a private endpoint</span></span><br>
+            <span class="p-5">token="pangia_xxx<span class="text-muted"># Token is not persisted to the machine</span></span><br>)
+    </p>
+
+    <p>datasets = pangia_api.list_datasets()</p>
+
+</code>
+
+</div>

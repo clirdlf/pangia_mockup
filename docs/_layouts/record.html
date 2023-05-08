@@ -5,11 +5,33 @@ layout: default
     <h1>{{ page.title }}</h1>
 
     <div class="row py-lg-5 text-center">
-        <div class="col-lg-6 col-md-8 mx-aut">
+        <div class="col-lg-6 col-md-8 mx-auto">
             <dl class="row bg-light">
                 <dt class="col-sm-3">Data Provider:</dt>
                 <dd class="col-sm-9">{{ page.data_provider }}</dd>
             </dl>
+
+            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#example">Usage Example</button>
+
+            <div class="modal fade" id="example" tabindex="-1" aria-labelledby="exampleModalLabel">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-code-slash"></i> How to use from the library</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-start">
+                            <code>
+                                from datasets import load_dataset<br><br>
+                                dataset = load_dataset('{{ page.title | slugify }}')
+                            </code>
+                        </div>
+                        <div class="modal-footer">
+                            <p><i class="bi bi-paperclip"></i> <a href="{{'/library/' | relative_url }}">Read the documentation</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -41,6 +63,8 @@ layout: default
         <img src="{{ page.thumbnail}}" alt="{{ page.title }}"/>
     </a>
     {% endif %}
+
+    {{ page.keywords }}
 
 
     {{ content }}
