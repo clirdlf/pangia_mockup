@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Migrant Apple Pickers' Salaries and Climate Change in California</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.41.0/apexcharts.min.js"></script>
+</head>
+<body>
+    <div id="chart"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            // Data
+            const salaries = {
+                years: [2015, 2016, 2017, 2018, 2019, 2020, 2021],
+                values: [30000, 32000, 31000, 33000, 34000, 35000, 36000]
+            };
+
+            const climateData = {
+                years: [2015, 2016, 2017, 2018, 2019, 2020, 2021],
+                values: [0.8, 0.9, 1.0, 1.2, 1.1, 1.3, 1.5]
+            };
+
+            // Chart options
+            const options = {
+                chart: {
+                    height: 350,
+                    type: 'line',
+                },
+                series: [{
+                    name: 'Salaries',
+                    data: salaries.values
+                }, {
+                    name: 'Temperature Anomaly (°C)',
+                    data: climateData.values
+                }],
+                xaxis: {
+                    categories: salaries.years
+                },
+                yaxis: [
+                    {
+                        seriesName: 'Salaries',
+                        axisTicks: {
+                            show: true
+                        },
+                        axisBorder: {
+                            show: true,
+                            color: '#008FFB'
+                        },
+                        labels: {
+                            style: {
+                                colors: '#008FFB'
+                            }
+                        },
+                        title: {
+                            text: "Salaries (USD)",
+                            style: {
+                                color: '#008FFB'
+                            }
+                        }
+                    },
+                    {
+                        seriesName: 'Temperature Anomaly (°C)',
+                        opposite: true,
+                        axisTicks: {
+                            show: true
+                        },
+                        axisBorder: {
+                            show: true,
+                            color: '#FF4560'
+                        },
+                        labels: {
+                            style: {
+                                colors: '#FF4560'
+                            }
+                        },
+                        title: {
+                            text: "Temperature Anomaly (°C)",
+                            style: {
+                                color: '#FF4560'
+                            }
+                        }
+                    }
+                ],
+                tooltip: {
+                    shared: true
+                },
+                legend: {
+                    position: 'top'
+                },
+            };
+
+            // Initialize chart
+            const chart = new ApexCharts(document.querySelector("#chart"), options);
+
+            // Render chart
+            chart.render();
+        });
+    </script>
+</body>
+</html>
