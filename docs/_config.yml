@@ -27,6 +27,10 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: clirnews
 github_username:  clirdlf
 
+# Mapbox settings
+mapbox_access_token: pk.eyJ1Ijoid3NnNHciLCJhIjoiTVd4cXdScyJ9.ypK9cLCVFReavCn9b_hhWQ
+mapbox_style: mapbox://styles/wsg4w/cl3q44jkp003k15nt3ii5e8o5
+
 sass:
   sass_dir: _sass
 

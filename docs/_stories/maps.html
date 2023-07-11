@@ -1,0 +1,153 @@
+---
+layout: mapbox
+background: /assets/images/maine/john-mcarthur-IXQJ7uWajRs-unsplash.jpg
+title: New York City
+theme: light
+alignment: left
+date: 2023-07-11
+author: Luc Solis
+blurb: Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec eu lorem nulla.
+description: 
+footer: This story is based on data by the <a href="http://web.mta.info/developers/turnstile.html">Metropolitan Transit Authority</a> and reporting by the New York Times (<a href="https://www.nytimes.com/2020/04/09/nyregion/coronavirus-queens-corona-jackson-heights-elmhurst.html">here</a> and <a href="https://www.nytimes.com/aponline/2020/04/02/us/ap-us-virus-outbreak-hardest-hit.html">here</a>), <a href="https://ny.curbed.com/2020/3/24/21192454/coronavirus-nyc-transportation-subway-citi-bike-covid-19">Curbed</a>, and <a href="https://thecity.nyc/2020/03/subway-ridership-plunge-deepest-at-big-manhattan-stations.html">The City</a>.
+footerAttribution: <a href="https://www.mapbox.com/about/maps/" target="_blank">© Mapbox</a> | <a href="http://www.openstreetmap.org/about/" target="_blank">© OpenStreetMap</a> | <a href="https://www.clir.org/" target="_blank">CLIR</a>
+stylesheets:
+scripts:
+chapters:
+  - id: overallMap
+    title: Subway Ridership Plummets
+    image: images/Chapter_1_Image.jpg
+    imageCredit: '<a href="http://www.metouhey.com/">Max Touhey</a>'
+    description: >-
+      All around the city subway ridership plummeted during the first two weeks
+      of the Covid-19 outbreak. On average, stations saw a decrease of more than
+      50% in entries and exits between March 6th and March 20th, 2020. But as
+      this map shows, the drop in ridership did not happen uniformly throughout
+      the city.
+    soundcloud: >-
+      <iframe width="100%" height="166" scrolling="no" frameborder="no"
+      allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/809973580&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div
+      style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break:
+      normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
+      font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida
+      Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a
+      href="https://soundcloud.com/nypl" title="New York Public Library"
+      target="_blank" style="color: #cccccc; text-decoration: none;">New York
+      Public Library</a> · <a
+      href="https://soundcloud.com/nypl/to-see-an-underground-show" title="1. To
+      See an Underground Show" target="_blank" style="color: #cccccc;
+      text-decoration: none;">1. To See an Underground Show</a></div>
+    location:
+      center:
+        - -74, 40.725
+      zoom: 10
+      pitch: 0
+      bearing: 0
+    onChapterEnter: []
+    onChapterExit: []
+  - id: overallMap2
+    title: Video example
+    video: >-
+      <iframe height="283" width="100%"
+      src="https://www.youtube.com/embed/_q1N4J5oTSE" title="YouTube video
+      player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+      encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+    description: Live Litli-Hrútur Eruption
+    location:
+      center:
+        - -22.2114372, 63.9163832
+      zoom: 10
+      pitch: 60
+      bearing: 80
+    onChapterEnter: []
+    onChapterExit: []
+  - id: incomeUnderlay
+    title: Forced to work and take the subway
+    image: images/Chapter_2_Image.jpg
+    imageCredit: >-
+      <a
+      href="https://www.nytimes.com/2020/04/09/nyregion/coronavirus-queens-corona-jackson-heights-elmhurst.html">The
+      New York Times</a>
+    description: >-
+      Income inequality certainly played a role in the uneven distribution of
+      subway usage. By overlaying median household income and change in subway
+      entries it becomes clear that those stations with less change are located
+      in low-income areas, specially in the Bronx and outer Queens and Brooklyn.
+    location:
+      center:
+        - -74, 40.725
+      zoom: 10
+      pitch: 0
+      bearing: 0
+    onChapterEnter:
+      - layer: medianIncome
+        opacity: 1
+    onChapterExit:
+      - layer: medianIncome
+        opacity: 0
+  - id: elmhurstHospital
+    title: The epicenter of the outbreak
+    image: images/Chapter_3_Image.jpg
+    imageCredit: >-
+      <a
+      href="https://www.nytimes.com/2020/04/09/nyregion/coronavirus-queens-corona-jackson-heights-elmhurst.html">The
+      New York Times</a>
+    description: >-
+      Elmhurst Hospital Center has been identified as one of the hospitals most
+      overwhelmed by the number of patients with COVID-19 it has received.
+      Located in a low-middle-income area of the city, with a median household
+      income of around $50,000, the hospital serves one of the most diverse and
+      immigrant dense areas of the city. The three subway stations around the
+      hospital have all seen relatively small change in their usage compare to
+      the rest of the city.
+    location:
+      center:
+        - -73.886201, 40.744566
+      zoom: 16
+      pitch: 40
+      bearing: -7
+    onChapterEnter:
+      - layer: medianIncome
+        opacity: 0
+    onChapterExit:
+      - layer: medianIncome
+        opacity: 0
+  - id: southBronx
+    title: 'The South Bronx, as Always'
+    image: images/Chapter_4_Image.jpg
+    imageCredit: >-
+      <a
+      href="https://www.nytimes.com/2020/04/09/nyregion/coronavirus-queens-corona-jackson-heights-elmhurst.html">The
+      New York Times</a>
+    description: >-
+      The South Bronx, perennially marred in social injustice, has also been
+      hard hit during the current COVID-19 outbreak. The area's three main
+      neighborhoods, Mott Haven, Melrose and Port Morris are mostly home to
+      low-income families that have been forced to continue going to work,
+      risking their health and that of their loved ones. Similarly to Jackson
+      Heights in Queens, the areas subway stations have seen a smaller decrease
+      in use than the rest of the city. Median household income in this area
+      oscillates between $15,000 and $30,000.
+    location:
+      center:
+        - -73.918037, 40.816093
+      zoom: 15
+      pitch: 40
+      bearing: 8
+    onChapterEnter:
+      - layer: medianIncome
+        opacity: 1
+    onChapterExit:
+      - layer: medianIncome
+        opacity: 0
+
+---
+
+This example shows a storytelling template to show how maps could be used to do engaging story telling. This is based on data [MTA Turnstyle data](https://pointsunknown.nyc/web%20mapping/mapbox/2020/03/25/10_WebmappingTurnstileData.html). 
+
+This demonstration uses [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/api/), as well as [Intersection Observer](https://www.npmjs.com/package/intersection-observer) and [Scrollama](https://github.com/russellsamora/scrollama) as the main JavaScript libraries.
+
+It also embeds media examples with local (e.g. images), video (e.g. YouTube), sound (e.g. SoundCloud) and uses spatial layers in `geojson` format.
+
+This is based on [example code](https://www.mapbox.com/solutions/interactive-storytelling)
