@@ -1,5 +1,3 @@
-
-
 const layerTypes = {
     'fill': ['fill-opacity'],
     'line': ['line-opacity'],
@@ -159,7 +157,7 @@ const transformRequest = (url) => {
 /* This section creates the map element with the
 attributes from the main section of the config.js file */
 
-var map = new mapboxgl.Map({
+const map = new mapboxgl.Map({
     container: 'map',
     style: config.style,
     center: config.chapters[0].location.center,
@@ -170,8 +168,20 @@ var map = new mapboxgl.Map({
     transformRequest: transformRequest
 });
 
+map.on('style.load', () => {
+    
+    map.addSource('mapbox-dem', {
+    'type': 'raster-dem',
+    'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
+    'tileSize': 512,
+    'maxzoom': 14
+    });
+    // add the DEM source as a terrain layer with exaggerated height
+    map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 1.5 });
+});
+
 // Instantiates the scrollama function
-var scroller = scrollama();
+const scroller = scrollama();
 
 /* Here we add the two extra layers we are using, just like in our previous
 tutorial. At the end, however, we setup the functions that will tie the
@@ -260,6 +270,27 @@ map.on("load", function () {
                 chapter.onChapterExit.forEach(setLayerOpacity);
             }
         });
+
+    // Create the popup
+    map.on('click', 'turnstileData', function (e) {
+        console.log('click event', e);
+        let entriesDiff = e.features[0].properties.ENTRIES_DIFF;
+        let entries_06 = e.features[0].properties.ENTRIES_06;
+        let entries_20 = e.features[0].properties.ENTRIES_20;
+        let stationName = e.features[0].properties.stationName;
+        new mapboxgl.Popup()
+            .setLngLat(e.lngLat)
+            .setHTML(stationName + '<br>' + entriesDiff + '%' + '<br>' + entries_06 + '<br>' + entries_20)
+            .addTo(map);
+    });
+    // Change the cursor to a pointer when the mouse is over the turnstileData layer.
+    map.on('mouseenter', 'turnstileData', function () {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'turnstileData', function () {
+        map.getCanvas().style.cursor = '';
+    });
 });
 
 /* Here we watch for any resizing of the screen to
@@ -332,24 +363,3 @@ window.addEventListener('resize', scroller.resize);
 //     );
 // });
 
-// map.on('click', 'turnstileData', function(e){
-//     var entriesDiff = e.features[0].properties.ENTRIES_DIFF;
-//     var entries_06 = e.features[0].properties.ENTRIES_06;
-//     var entries_20 = e.features[0].properties.ENTRIES_20;
-//     var stationName = e.features[0].properties.stationName;
-//     new mapboxgl.Popup()
-//         .setLngLat(e.lngLat)
-//         .setHTML('<h4>' + stationName + '</h4>'
-//             + '<p><b>Friday, March 6th:</b> ' + entries_06 + ' entries<br>'
-//             + '<b>Friday, March 20th:</b> ' + entries_20 + ' entries<br>'
-//             + '<b>Change:</b> ' + Math.round(entriesDiff * 1000) / 10 + '%</p>')
-//         .addTo(map);
-// });
-
-// map.on('mouseenter', 'turnstileData', function () {
-//     map.getCanvas().style.cursor = 'pointer';
-// });
-
-// map.on('mouseleave', 'turnstileData', function () {
-//     map.getCanvas().style.cursor = '';
-// });
