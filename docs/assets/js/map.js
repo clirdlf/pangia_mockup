@@ -244,7 +244,7 @@ map.on("load", function () {
                 150000, '#00a2ca'],
             'fill-opacity': ['case', ['==', ['get', 'MHHI'], null], 0, 0.65]
         }
-    }, 'turnstileData');
+    }, 'waterway-shadow');
     // Setup the instance, pass callback functions
     scroller
         .setup({
